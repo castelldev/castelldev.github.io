@@ -467,14 +467,13 @@ body {
   flex-direction: row;
   justify-content: space-around;
   max-width: 950px;
-  /*   border:solid; */
 }
 
 .project-tile {
   overflow: hidden; /*clips image on expand*/
   position: relative;
   width: 400px;
-  max-height:250px;
+  max-height:240px;
   height: auto;
   margin: 25px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
