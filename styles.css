@@ -64,22 +64,12 @@ body {
   text-align: center;
   font-size: 20px;
   opacity: 0;
-  -webkit-animation: anim_fly_down 1s 1.5s var(--base-timing-function) forwards;
-          animation: anim_fly_down 1s 1.5s var(--base-timing-function) forwards;
-}
-
-@-webkit-keyframes anim_fly_down {
-  100% {
-    -webkit-transform: translate(0%, 50%);
-            transform: translate(0%, 50%);
-    opacity: 1;
-  }
+  animation: anim_fly_down 1s 1.5s var(--base-timing-function) forwards;
 }
 
 @keyframes anim_fly_down {
   100% {
-    -webkit-transform: translate(0%, 50%);
-            transform: translate(0%, 50%);
+    transform: translate(0%, 50%);
     opacity: 1;
   }
 }
@@ -95,36 +85,8 @@ body {
 #welcome-text:after {
   content: "";
   font-size: 25px;
-  -webkit-animation: anim_cycle_text 5s var(--base-timing-function) infinite;
-          animation: anim_cycle_text 5s var(--base-timing-function) infinite;
+  animation: anim_cycle_text 5s var(--base-timing-function) infinite;
   opacity: 0;
-}
-@-webkit-keyframes anim_cycle_text {
-  25% {
-    content: "FRONT END";
-    opacity: 1;
-  }
-  35% {
-    opacity: 0;
-  }
-  50% {
-    content: "UI DESIGN";
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  75% {
-    content: "UX DESIGN";
-    opacity: 1;
-  }
-  85% {
-    opacity: 0;
-  }
-  100% {
-    content: "MOBILE";
-    opacity: 1;
-  }
 }
 @keyframes anim_cycle_text {
   25% {
@@ -169,18 +131,14 @@ body {
   right: 0;
   box-shadow: 0px 0px 10px var(--projects-bg);
   background-color: var(--projects-bg);
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   transition: all 500ms var(--base-timing-function);
 }
 #dynamic-object:hover {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
   border-radius: 50%;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transform: translateY(-85px);
-          transform: translateY(-85px);
+  transform: scale(1.1);
+  transform: translateY(-85px);
   box-shadow: 0px 0px 5px var(--lightborder);
   content: url("https://avatars2.githubusercontent.com/u/5348534?s=460&v=4");
 }
@@ -206,8 +164,7 @@ body {
   background: white;
   border-radius: 50%;
   z-index: 2;
-  -webkit-animation: pulse 1500ms var(--base-timing-function) infinite;
-          animation: pulse 1500ms var(--base-timing-function) infinite;
+  animation: pulse 1500ms var(--base-timing-function) infinite;
 }
 #beacon-ring {
   position: absolute;
@@ -219,36 +176,21 @@ body {
   background: white;
   border: dotted white 5px;
   border-radius: 50%;
-  -webkit-animation: expand 1500ms var(--base-timing-function) infinite;
-          animation: expand 1500ms var(--base-timing-function) infinite;
-}
-@-webkit-keyframes pulse {
-  50% {
-    opacity: 0.1;
-  }
+  animation: expand 1500ms var(--base-timing-function) infinite;
 }
 @keyframes pulse {
   50% {
     opacity: 0.1;
   }
 }
-@-webkit-keyframes expand {
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
 @keyframes expand {
   100% {
     opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    transform: scale(1.5);
   }
 }
 #beacon-container:hover #beacon-ring {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 #beacon-container:hover #beacon {
   box-shadow: 0px 0px 5px whitesmoke;
@@ -287,20 +229,16 @@ body {
   margin-bottom: 15px;
 }
 #gauntlet:hover #index {
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  transform: translateY(30px);
 }
 #gauntlet:hover #middle {
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  transform: translateY(30px);
 }
 #gauntlet:hover #ring {
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  transform: translateY(30px);
 }
 #gauntlet:hover #pinky {
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  transform: translateY(30px);
 }
 #gauntlet:hover #thumb {
   bottom: 15%;
@@ -343,27 +281,19 @@ body {
   z-index: 1;
 }
 #index {
-  transition: -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 200ms;
   transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 200ms;
-  transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 200ms, -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 200ms;
 }
 #middle {
-  transition: -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 400ms;
   transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 400ms;
-  transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 400ms, -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 400ms;
 }
 #middle:before {
   height: 60px;
 }
 #ring {
-  transition: -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 600ms;
   transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 600ms;
-  transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 600ms, -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 600ms;
 }
 #pinky {
-  transition: -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 800ms;
   transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 800ms;
-  transition: transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 800ms, -webkit-transform 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99) 800ms;
 }
 #pinky:before {
   height: 25px;
@@ -388,10 +318,8 @@ body {
   width: 40px;
   height: 10px;
   background: var(--outline);
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform-origin: right;
+  transform: rotate(45deg);
   z-index: -2;
   transition: left 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99),
     bottom 200ms cubic-bezier(0.62, 0.28, 0.23, 0.99);
@@ -467,46 +395,33 @@ body {
   flex-direction: row;
   justify-content: space-around;
   max-width: 950px;
+  /*   border:solid; */
 }
 
 .project-tile {
   overflow: hidden; /*clips image on expand*/
   position: relative;
   width: 400px;
-  max-height:240px;
+  min-height: 207.5px;
   height: auto;
   margin: 25px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  transition: width 500ms var(--base-timing-function),
-    -webkit-transform 500ms var(--base-timing-function);
   transition: transform 500ms var(--base-timing-function),
     width 500ms var(--base-timing-function);
-  transition: transform 500ms var(--base-timing-function),
-    width 500ms var(--base-timing-function),
-    -webkit-transform 500ms var(--base-timing-function);
 }
 
 .project-image {
   width: 400px;
   height: 100%;
   min-height: 200px;
-  -webkit-filter: grayscale(80%);
-          filter: grayscale(80%);
-  transition: -webkit-filter 500ms var(--base-timing-function),
-    -webkit-transform 500ms var(--base-timing-function);
+  filter: grayscale(80%);
   transition: filter 500ms var(--base-timing-function),
     transform 500ms var(--base-timing-function);
-  transition: filter 500ms var(--base-timing-function),
-    transform 500ms var(--base-timing-function),
-    -webkit-filter 500ms var(--base-timing-function),
-    -webkit-transform 500ms var(--base-timing-function);
 }
 
 .project-tile:hover .project-image {
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  filter: grayscale(0%);
+  transform: scale(1.1);
 }
 .project-tile:hover .description {
   bottom: 0px;
@@ -552,10 +467,7 @@ body {
 }
 
 .intro-wrapper {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   display: inline-block;
   border-bottom: solid 1px;
 }
@@ -570,19 +482,11 @@ body {
   margin: auto;
   /*   border: dotted 1px; */
   transition: all 100ms var(--base-timing-function) 3s;
-  -webkit-animation: attention 2s var(--base-timing-function) infinite;
-          animation: attention 2s var(--base-timing-function) infinite;
-}
-@-webkit-keyframes attention {
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
+  animation: attention 2s var(--base-timing-function) infinite;
 }
 @keyframes attention {
   50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
 }
 .smiley-face:hover {
@@ -597,8 +501,7 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  -webkit-transform: translate(-8px, 7px);
-          transform: translate(-8px, 7px);
+  transform: translate(-8px, 7px);
   background: var(--contact-bg);
 }
 .smiley-face:hover #eye:after {
@@ -606,8 +509,7 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  -webkit-transform: translateX(16px);
-          transform: translateX(16px);
+  transform: translateX(16px);
   background: var(--contact-bg);
 }
 .smiley-face:hover #mouth {
@@ -662,8 +564,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  -webkit-animation: attention 1.5s var(--base-timing-function) infinite;
-          animation: attention 1.5s var(--base-timing-function) infinite;
+  animation: attention 1.5s var(--base-timing-function) infinite;
 }
 #knot {
   position: absolute;
@@ -708,9 +609,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 #blade:after {
   content: "";
@@ -723,35 +622,25 @@ body {
   margin: auto;
   width: 100%;
   height: 100%;
-  transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 #corbata:hover #knot {
   bottom: 28px;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transform: skewX(10deg);
-          transform: skewX(10deg);
+  transform-origin: bottom right;
+  transform: skewX(10deg);
 }
 #corbata:hover #knot:before {
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg);
+  transform-origin: bottom left;
+  transform: skewX(-20deg);
 }
 #corbata:hover #blade:before {
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  -webkit-transform: skewX(-6deg);
-          transform: skewX(-6deg);
+  transform-origin: top left;
+  transform: skewX(-6deg);
   /*left:-2px;*/
 }
 #corbata:hover #blade:after {
-  -webkit-transform-origin: top right;
-          transform-origin: top right;
-  -webkit-transform: skewX(6deg);
-          transform: skewX(6deg);
+  transform-origin: top right;
+  transform: skewX(6deg);
   /*   left:1px; */
 }
 #corbata:hover #tipping {
@@ -779,29 +668,21 @@ body {
   width: 64px;
   height: 64px;
   margin: 5px;
-  -webkit-filter: invert(50%);
-          filter: invert(50%);
-  transition: -webkit-filter 0.5s var(--base-timing-function);
+  filter: invert(50%);
   transition: filter 0.5s var(--base-timing-function);
-  transition: filter 0.5s var(--base-timing-function), -webkit-filter 0.5s var(--base-timing-function);
 }
 .contact-image:hover {
-  -webkit-filter: invert(0%);
-          filter: invert(0%);
+  filter: invert(0%);
 }
 #codepen-asset:hover {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 #reddit-asset {
-  transition: -webkit-filter 1s var(--base-timing-function);
   transition: filter 1s var(--base-timing-function);
-  transition: filter 1s var(--base-timing-function), -webkit-filter 1s var(--base-timing-function);
 }
 #reddit-asset:hover {
   content: url("http://i.imgur.com/3NtinwD.png");
-  -webkit-filter: invert(0%);
-          filter: invert(0%);
+  filter: invert(0%);
 }
 
 @media screen and (max-width: 600px) {
