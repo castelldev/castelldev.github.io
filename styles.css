@@ -11,8 +11,8 @@ body {
   margin: 50px 0 0 0;
   width: 100%;
   background: var(--welcome-bg);
+  overflow-x: hidden;
 }
-
 #navbar {
   display: flex;
   flex-direction: row;
@@ -24,7 +24,7 @@ body {
   background-color: var(--welcome-bg);
   opacity: 0.99;
   width: 100%;
-  height: 50px;
+  height: 60px;
   box-shadow: 0px 0px 10px var(--welcome-bg);
 }
 .nav-link {
@@ -35,15 +35,15 @@ body {
   margin-right: 10px;
   padding:6px;
   font-weight: bold;
-  /* border: solid 1px var(--lightborder); */
   overflow: hidden;
-
+  transition: transform 100ms var(--base-timing-function),
+              box-shadow 50ms var(--base-timing-function) 50ms;
 }
 .nav-link:before{
   content: "";
   position: absolute;
-  top:-100%;
-  right:100%;
+  bottom:-100%;
+  left:-100%;
   border-radius: 50%;
   width:100%;
   height:100%;
@@ -52,8 +52,7 @@ body {
   z-index: -1;
 }
 .nav-link:hover{
-  color:black;
-    box-shadow: 0px 0px 2px var(--lightborder);
+  color:var(--contact-bg);
 }
 .nav-link:hover:before{
   top:50%;
@@ -61,6 +60,11 @@ body {
   transform: scale(2.5);
   border-radius: 0%;
 }
+.nav-link:active{
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 2px 1px #10101050;
+}
+
 /*Welcome Section*/
 #welcome-section {
   display: flex;
@@ -83,7 +87,6 @@ body {
   width: auto;
   height: auto;
   color: lightgray;
-  text-shadow: 0px 0px 10px var(--lightborder);
   margin: 10px;
   text-align: center;
   font-size: 1.5em;
@@ -99,7 +102,7 @@ body {
 }
 
 #welcome-text {
-  font-size: 50px;
+  font-size: 3em;
   color: lightgray;
   text-align: left;
   text-shadow: 0px 0px 10px var(--lightborder);
@@ -108,7 +111,7 @@ body {
 }
 #welcome-text:after {
   content: "";
-  font-size: 25px;
+  font-size: .5em;
   animation: anim_cycle_text 5s var(--base-timing-function) infinite;
   opacity: 0;
 }
@@ -143,7 +146,6 @@ body {
 #dynamic-object-container {
   position: absolute;
   margin: auto;
-  /*   border: solid black; */
   bottom: -80px;
   z-index: 2;
 }
@@ -163,7 +165,7 @@ body {
   border-radius: 50%;
   transform: scale(1.1);
   transform: translateY(-85px);
-  box-shadow: 0px 0px 5px var(--lightborder);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   content: url("https://avatars2.githubusercontent.com/u/5348534?s=460&v=4");
 }
 
@@ -227,6 +229,7 @@ body {
   align-items: center;
   position: relative;
   height: auto;
+  padding: 50px 0 100px 0;
   background-color: var(--projects-bg);
   z-index: 2;
 }
@@ -332,6 +335,20 @@ body {
   border: solid var(--outline) 10px;
   background: var(--projects-bg);
 }
+.hover-prompt{
+  opacity: .1;
+  animation: prompt 2000ms var(--base-timing-function) forwards 4;
+}
+.hover-prompt:after{
+  content: "hover";
+}
+@keyframes prompt{
+  50%{
+    opacity: .5;
+  }
+  100%{opacity: 0;}
+}
+
 #thumb {
   position: absolute;
   bottom: 35%;
@@ -404,7 +421,7 @@ body {
   width: auto;
   height: auto;
   color: lightgray;
-  margin: 10px;
+  margin: 50px;
   text-align: center;
   font-size: 1.5em;
   opacity: 1;
@@ -420,6 +437,7 @@ body {
 .project-tile {
   overflow: hidden; /*clips image on expand*/
   position: relative;
+
   width: 400px;
   max-height: 207.5px;
   height: auto;
@@ -446,12 +464,13 @@ body {
   bottom: 0px;
 }
 .description {
-  color: black;
   display: inline-block;
   position: absolute;
+  background-color: var(--lightborder);
+  text-align: center;
+  color: black;
   width: 400px;
   height: 25px;
-  background-color: var(--lightborder);
   left: 0;
   right: 0;
   margin: auto;
@@ -489,6 +508,35 @@ body {
   display: inline-block;
   border-bottom: solid 1px;
 }
+.intro-wrapper:hover > .smiley-face{
+  transition-delay: 0s;
+  width: 40px;
+  border-radius: 50%;
+  background: yellow;
+}
+.intro-wrapper:hover > .smiley-face #eye{
+  transition-delay: 0s;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-8px, 7px);
+  background: var(--contact-bg);
+}
+.intro-wrapper:hover > .smiley-face #eye:after{
+  transition-delay: 0s;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateX(16px);
+  background: var(--contact-bg);
+}
+.intro-wrapper:hover > .smiley-face #mouth{
+  transition-delay: 0s;
+  height: 20px;
+  width: 35px;
+  border-radius: 20% 20% 25px 25px;
+  background: var(--contact-bg);
+}
 .smiley-face {
   display: inline-block;
   position: relative;
@@ -498,7 +546,6 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  /*   border: dotted 1px; */
   transition: all 100ms var(--base-timing-function) 3s;
   animation: attention 2s var(--base-timing-function) infinite;
 }
@@ -506,36 +553,6 @@ body {
   50% {
     transform: scale(0.9);
   }
-}
-.smiley-face:hover {
-  transition-delay: 0s;
-  width: 40px;
-  border-radius: 50%;
-  background: yellow;
-}
-
-.smiley-face:hover #eye {
-  transition-delay: 0s;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: translate(-8px, 7px);
-  background: var(--contact-bg);
-}
-.smiley-face:hover #eye:after {
-  transition-delay: 0s;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: translateX(16px);
-  background: var(--contact-bg);
-}
-.smiley-face:hover #mouth {
-  transition-delay: 0s;
-  height: 20px;
-  width: 35px;
-  border-radius: 20% 20% 25px 25px;
-  background: var(--contact-bg);
 }
 
 #eye {
@@ -561,7 +578,6 @@ body {
   transition: all 100ms ease 3s;
 }
 #mouth {
-  background: lightgray;
   position: absolute;
   bottom: 2px;
   left: 0;
@@ -569,9 +585,33 @@ body {
   margin: auto;
   width: 5px;
   height: 25px;
+  background: lightgray;
   transition: all 100ms ease 3s;
 }
 
+.intro-wrapper:hover > #corbata #knot{
+  bottom: 28px;
+  transform-origin: bottom right;
+  transform: skewX(10deg);
+}
+.intro-wrapper:hover > #corbata #knot:before{
+  transform-origin: bottom left;
+  transform: skewX(-20deg);
+}
+.intro-wrapper:hover > #corbata #blade:before{
+  transform-origin: top left;
+  transform: skewX(-6deg);
+}
+.intro-wrapper:hover > #corbata #blade:after{
+  transform-origin: top right;
+  transform: skewX(6deg);
+}
+.intro-wrapper:hover > #corbata #tipping{
+  opacity: 1;
+  border-top: solid 9px lightgray;
+  border-left: solid 5px transparent;
+  border-right: solid 5px transparent;
+}
 /*TIE */
 #corbata {
   display: inline-block;
@@ -654,12 +694,10 @@ body {
 #corbata:hover #blade:before {
   transform-origin: top left;
   transform: skewX(-6deg);
-  /*left:-2px;*/
 }
 #corbata:hover #blade:after {
   transform-origin: top right;
   transform: skewX(6deg);
-  /*   left:1px; */
 }
 #corbata:hover #tipping {
   opacity: 1;
@@ -681,8 +719,7 @@ body {
 }
 
 .contact-image,
-#codepen-asset,
-#reddit-asset {
+#codepen-asset{
   width: 64px;
   height: 64px;
   margin: 5px;
@@ -695,17 +732,15 @@ body {
 #codepen-asset:hover {
   filter: invert(100%);
 }
-#reddit-asset {
-  transition: filter 1s var(--base-timing-function);
-}
-#reddit-asset:hover {
-  content: url("http://i.imgur.com/3NtinwD.png");
-  filter: invert(0%);
-}
 
-@media screen and (max-width: 600px) {
+/* Mobile UI */
+@media screen and (max-width: 650px) {
   #navbar {
     justify-content: center;
+  }
+  .nav-link{
+    text-align: center;
+    width: 100%;
   }
   #welcome-section {
     align-items: flex-start;
@@ -713,6 +748,9 @@ body {
   }
   #welcome-intro {
     top: 30%;
+  }
+  .hover-prompt:after{
+    content: "click";
   }
   #skills-container {
     flex-wrap: wrap;
@@ -732,6 +770,7 @@ body {
   }
   .project-tile {
     width: 70vw;
+    min-width: 400px;
   }
   .contact-image,
   #codepen-asset,
