@@ -682,29 +682,6 @@ body {
   height: 100%;
   transition: transform 500ms ease;
 }
-#corbata:hover #knot {
-  bottom: 28px;
-  transform-origin: bottom right;
-  transform: skewX(10deg);
-}
-#corbata:hover #knot:before {
-  transform-origin: bottom left;
-  transform: skewX(-20deg);
-}
-#corbata:hover #blade:before {
-  transform-origin: top left;
-  transform: skewX(-6deg);
-}
-#corbata:hover #blade:after {
-  transform-origin: top right;
-  transform: skewX(6deg);
-}
-#corbata:hover #tipping {
-  opacity: 1;
-  border-top: solid 9px lightgray;
-  border-left: solid 5px transparent;
-  border-right: solid 5px transparent;
-}
 
 #tipping {
   display: inline-block;
