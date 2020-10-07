@@ -131,8 +131,8 @@ body {
   text-align: center;
   font-size: 1.5em;
   opacity: 0;
-  -webkit-animation: anim_fly_down 1s 1.5s var(--base-timing-function) forwards;
-  animation: anim_fly_down 1s 1.5s var(--base-timing-function) forwards;
+  -webkit-animation: anim_fly_down 1s 1.5s var(--base-timing-function) both;
+  animation: anim_fly_down 1s 1.5s var(--base-timing-function) both;
 }
 
 @-webkit-keyframes anim_fly_down {
@@ -162,62 +162,66 @@ body {
 #welcome-text:after {
   content: "";
   font-size: 0.5em;
-  -webkit-animation: anim_cycle_text 5s var(--base-timing-function) infinite;
-  animation: anim_cycle_text 5s var(--base-timing-function) infinite;
+  -webkit-animation: anim_cycle_text 5s var(--base-timing-function) infinite both;
+  animation: anim_cycle_text 5s var(--base-timing-function) infinite both;
   opacity: 0;
 }
 @-webkit-keyframes anim_cycle_text {
-  25% {
-    content: "FRONT END";
-    opacity: 1;
-  }
-  35% {
+  0% {
     opacity: 0;
   }
-  50% {
+  10% {
+    content: "FRONTEND";
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
     content: "UI DESIGN";
     opacity: 1;
   }
   60% {
     opacity: 0;
   }
-  75% {
+  70% {
     content: "UX DESIGN";
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 0;
   }
   100% {
-    content: "MOBILE";
-    opacity: 1;
+    opacity: 0;
   }
 }
 @keyframes anim_cycle_text {
-  25% {
-    content: "FRONT END";
-    opacity: 1;
-  }
-  35% {
+  0% {
     opacity: 0;
   }
-  50% {
+  10% {
+    content: "FRONTEND";
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
     content: "UI DESIGN";
     opacity: 1;
   }
   60% {
     opacity: 0;
   }
-  75% {
+  70% {
     content: "UX DESIGN";
     opacity: 1;
   }
-  85% {
+  90% {
     opacity: 0;
   }
   100% {
-    content: "MOBILE";
-    opacity: 1;
+    opacity: 0;
   }
 }
 /*Dynamic object Container*/
